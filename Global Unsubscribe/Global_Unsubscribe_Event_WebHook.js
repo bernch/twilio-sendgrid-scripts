@@ -7,11 +7,14 @@ See: https://www.twilio.com/docs/runtime/functions.
 1. Create a new Twilio function service, paste this code into a new function and 
 add your SendGrid API key to the Twilio Function environment as `API_KEY`
 
-2. Point the subusers Event Webhook settings to POST `unsubscribe` events to 
+2. Add axios 0.20.0 as a dependency under Functions Global Config, Dependencies
+
+3. Point the subusers Event Webhook settings to POST `unsubscribe` events to 
 the function's public URL.
 
+4. Voila! Any unsubscribe events received at this Twilio function will be propagated to the subusers.
+
 */
-// Add axios 0.20.0 as a dependency under Functions Global Config, Dependencies
 const axios = require('axios');
 
 exports.handler = function (context, event, callback) {
