@@ -29,7 +29,7 @@ exports.handler = function (context, event, callback) {
   then((response) => {
     const subusers = response.data;
 
-    promises = []
+    promises = [];
     // Only fetch unsubscribe events
     for (i in event) {
       if (event[i].event == 'unsubscribe') {
