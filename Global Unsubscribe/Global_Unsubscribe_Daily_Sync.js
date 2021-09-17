@@ -15,7 +15,7 @@ then((response) => {
     const subusers = response.data;
     let promises = [];
 
-    // Fetching subusers and their global unsubscribes added in the past week
+    // Fetching subusers and their global unsubscribes added in the past 1 day
     today = new Date();
     start_time = Math.floor(new Date().setDate(today.getDate() - 1) / 1000)
     end_time = Math.floor(today.getTime() / 1000);
