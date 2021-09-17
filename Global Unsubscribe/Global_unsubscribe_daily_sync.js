@@ -1,3 +1,19 @@
+/*
+
+This script fetches all global unsubscribes from your SendGrid subusers, 
+combines it into a Set and propagates it back to the subusers.
+
+Note:
+1. The v3/suppression/unsubscribes API returns only the first 500 unsubscribes, 
+you'll need to modify the API call using a combination of offset, start_time 
+and end_time if there are more than 500 unsubscribes in a subuser.
+
+See: https://sendgrid.api-docs.io/v3.0/suppressions-global-suppressions/retrieve-all-global-suppressions
+
+2. The script accepts a Twilio SendGrid API key from a .env file containing a `API_KEY` variable.
+
+*/
+
 const axios = require('axios');
 require('dotenv').config();
 // axios.<method> will now provide autocomplete and parameter typings
