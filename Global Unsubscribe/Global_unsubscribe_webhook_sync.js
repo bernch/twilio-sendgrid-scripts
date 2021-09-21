@@ -34,7 +34,7 @@ exports.handler = function (context, event, callback) {
       instance.get('/subusers').then((response) => {
         const subusers = response.data;
 
-        promises = []
+        promises = [];
 
         // Push this unsubscribe email to every other subuser
         for (s of subusers) {
